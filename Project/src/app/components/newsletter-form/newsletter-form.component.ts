@@ -28,7 +28,8 @@ export class NewsletterFormComponent {
     if(this.newsletterForm.valid){
       this.service.sendData(this.newsletterForm.value.name, this.newsletterForm.value.email).subscribe({
         next: () => {
-          this.newsletterForm.reset
+          this.newsletterForm.reset;
+          this.loading.set(false);
         }
       })
     }
